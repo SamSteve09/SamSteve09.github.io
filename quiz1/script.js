@@ -32,8 +32,12 @@ const handleLocation = async () => {
   }
 };
 
+
 // Handle browser back/forward button navigation
-window.onpopstate = handleLocation;
+window.onpopstate = () => {
+  // Reload the page when back/forward button is pressed
+  window.location.reload(); // Forces the page to refresh
+};
 
 // Call handleLocation on initial page load
-handleLocation();
+document.addEventListener('DOMContentLoaded', handleLocation);
