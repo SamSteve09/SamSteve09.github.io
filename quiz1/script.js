@@ -15,6 +15,7 @@ const route = (event) => {
   // Update the browser's URL using pushState
   window.history.pushState({}, "", event.target.closest('a').href);
   handleLocation();
+  
 };
 
 // Handle the location change and load the corresponding content
@@ -30,6 +31,7 @@ const handleLocation = async () => {
     // If no route is found, show a 404 error message
     //document.getElementById("main-page").innerHTML = "<h2>404 - Page Not Found</h2>";
   }
+  
 };
 
 
@@ -41,3 +43,4 @@ window.onpopstate = () => {
 
 // Call handleLocation on initial page load
 document.addEventListener('DOMContentLoaded', handleLocation);
+
